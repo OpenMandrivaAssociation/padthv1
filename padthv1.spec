@@ -1,13 +1,17 @@
 Summary:	An old-school polyphonic additive synthesizer
 Name:		padthv1
 Version:	0.9.11
-Release:	%mkrel 1
+Release:	1
 License:	GPLv2+
 Group:		Sound/Midi
 URL:		https://padthv1.sourceforge.io
 Source0:	http://sourceforge.net/projects/padthv1/files/padthv1/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	desktop-file-utils
-BuildRequires:	qttools5
+BuildRequires:	qt5-qttools
+BuildRequires: qt5-qtchooser
+BuildRequires:	qt5-linguist
+BuildRequires:	qt5-linguist-tools
+BuildRequires: qmake5
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(Qt5Widgets)
@@ -66,7 +70,7 @@ variant of additive synthesis.
 %autopatch -p1
 
 %build
-%configure2_5x --enable-debug
+%configure --enable-debug
 %make_build
 
 %install
@@ -76,6 +80,6 @@ variant of additive synthesis.
 desktop-file-install \
   --remove-key="X-SuSE-translate" \
   --remove-key="Version" \
-  --add-category="X-Mageia-CrossDesktop" \
+  --add-category="X-MandrivaLinux-CrossDesktop" \
   --dir %{buildroot}%{_datadir}/applications \
 %{buildroot}%{_datadir}/applications/%{name}.desktop
