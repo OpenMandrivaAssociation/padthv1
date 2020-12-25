@@ -45,6 +45,7 @@ Features:
 %{_iconsdir}/hicolor/scalable/mimetypes/application-x-%{name}-*.svg
 %{_datadir}/mime/packages/%{name}.xml
 %{_mandir}/man1/%{name}*.1*
+%{_mandir}/fr/man1/padthv1.1.*
 
 #--------------------------------------------------------------------
 
