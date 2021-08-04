@@ -1,6 +1,6 @@
 Summary:	An old-school polyphonic additive synthesizer
 Name:		padthv1
-Version:	0.9.19
+Version:	0.9.23
 Release:	1
 License:	GPLv2+
 Group:		Sound/Midi
