@@ -70,7 +70,7 @@ variant of additive synthesis.
 %autosetup -p1
 
 %build
-%cmake -DCONFIG_QT6=yes \
+%cmake -DCONFIG_QT6=yes
 %make_build
 
 %install
