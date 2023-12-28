@@ -43,12 +43,12 @@ Features:
 %doc ChangeLog README
 %{_bindir}/%{name}_jack
 %{_datadir}/applications/org.rncbc.padthv1.desktop
-#{_datadir}/metainfo/org.rncbc.padthv1.appdata.xml
-#{_iconsdir}/hicolor/32x32/apps/%{name}.png
-#{_iconsdir}/hicolor/32x32/mimetypes/application-x-%{name}-*.png
-#{_iconsdir}/hicolor/scalable/apps/%{name}.svg
-#{_iconsdir}/hicolor/scalable/mimetypes/application-x-%{name}-*.svg
-#{_datadir}/mime/packages/%{name}.xml
+%{_datadir}/metainfo/org.rncbc.padthv1.metainfo.xml
+%{_iconsdir}/hicolor/32x32/apps/org.rncbc.padthv1.png
+%{_iconsdir}/hicolor/32x32/mimetypes/org.rncbc.padthv1.application-x-padthv1-preset.png
+%{_iconsdir}/hicolor/scalable/apps/org.rncbc.padthv1.svg
+%{_iconsdir}/hicolor/scalable/mimetypes/org.rncbc.padthv1.application-x-padthv1-preset.svg
+%{_datadir}/mime/packages/org.rncbc.padthv1.xml
 %{_mandir}/man1/%{name}*.1*
 %{_mandir}/fr/man1/padthv1.1.*
 
