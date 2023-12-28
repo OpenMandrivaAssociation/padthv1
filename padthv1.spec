@@ -8,17 +8,17 @@ URL:		https://padthv1.sourceforge.io
 Source0:	http://sourceforge.net/projects/padthv1/files/padthv1/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires: cmake
-BuildRequires:	desktop-file-utils
+BuildRequires: desktop-file-utils
 BuildRequires: cmake(Qt6)
 BuildRequires: qmake-qt6
 BuildRequires: cmake(Qt6LinguistTools)
-BuildRequires:	cmake(Qt6Core)
-BuildRequires:	cmake(Qt6Gui)
+BuildRequires: cmake(Qt6Core)
+BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Svg)
-BuildRequires:	cmake(Qt6Widgets)
-BuildRequires:	cmake(Qt6Xml)
+BuildRequires: cmake(Qt6Widgets)
+BuildRequires: cmake(Qt6Xml)
 BuildRequires: qt6-qtbase-theme-gtk3
-BuildRequires:	pkgconfig(jack)
+BuildRequires: pkgconfig(jack)
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(liblo)
@@ -41,8 +41,8 @@ Features:
 %doc AUTHORS ChangeLog README TODO
 %license COPYING
 %{_bindir}/%{name}_jack
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/metainfo/%{name}.appdata.xml
+%{_datadir}/applications/org.rncbc.padthv1.desktop
+%{_datadir}/metainfo/org.rncbc.padthv1.appdata.xml
 %{_iconsdir}/hicolor/32x32/apps/%{name}.png
 %{_iconsdir}/hicolor/32x32/mimetypes/application-x-%{name}-*.png
 %{_iconsdir}/hicolor/scalable/apps/%{name}.svg
@@ -86,4 +86,4 @@ desktop-file-install \
   --remove-key="Version" \
   --add-category="X-MandrivaLinux-CrossDesktop" \
   --dir %{buildroot}%{_datadir}/applications \
-%{buildroot}%{_datadir}/applications/%{name}.desktop
+%{buildroot}%{_datadir}/applications/org.rncbc.padthv1.desktop
