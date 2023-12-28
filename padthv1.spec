@@ -1,26 +1,32 @@
+%define _empty_manifest_terminate_build 0
+
 Summary:	An old-school polyphonic additive synthesizer
 Name:		padthv1
-Version:	0.9.23
+Version:	0.9.33
 Release:	1
 License:	GPLv2+
 Group:		Sound/Midi
 URL:		https://padthv1.sourceforge.io
 Source0:	http://sourceforge.net/projects/padthv1/files/padthv1/%{version}/%{name}-%{version}.tar.gz
-BuildRequires:	desktop-file-utils
-BuildRequires:	qt5-qttools
-BuildRequires: qt5-qtchooser
-BuildRequires:	qt5-linguist
-BuildRequires:	qt5-linguist-tools
-BuildRequires: qmake5
-BuildRequires:	pkgconfig(Qt5Core)
-BuildRequires:	pkgconfig(Qt5Gui)
-BuildRequires:	pkgconfig(Qt5Widgets)
-BuildRequires:	pkgconfig(Qt5Xml)
-BuildRequires:	pkgconfig(jack)
+
+BuildRequires: cmake
+BuildRequires: desktop-file-utils
+BuildRequires: cmake(Qt6)
+BuildRequires: qmake-qt6
+BuildRequires: cmake(Qt6LinguistTools)
+BuildRequires: cmake(Qt6Core)
+BuildRequires: cmake(Qt6Gui)
+BuildRequires: cmake(Qt6Svg)
+BuildRequires: cmake(Qt6Widgets)
+BuildRequires: cmake(Qt6Xml)
+BuildRequires: qt6-qtbase-theme-gtk3
+BuildRequires: pkgconfig(jack)
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(liblo)
 BuildRequires:	pkgconfig(lv2)
+BuildRequires: pkgconfig(vulkan)
+BuildRequires: pkgconfig(xkbcommon)
 
 %description
 padthv1 is an old-school polyphonic additive synthesizer with stereo fx.
@@ -34,16 +40,15 @@ Features:
     URI: http://padthv1.sourceforge.net/lv2
 
 %files
-%doc AUTHORS ChangeLog README TODO
-%license COPYING
+%doc ChangeLog README
 %{_bindir}/%{name}_jack
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/metainfo/%{name}.appdata.xml
-%{_iconsdir}/hicolor/32x32/apps/%{name}.png
-%{_iconsdir}/hicolor/32x32/mimetypes/application-x-%{name}-*.png
-%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
-%{_iconsdir}/hicolor/scalable/mimetypes/application-x-%{name}-*.svg
-%{_datadir}/mime/packages/%{name}.xml
+%{_datadir}/applications/org.rncbc.padthv1.desktop
+%{_datadir}/metainfo/org.rncbc.padthv1.metainfo.xml
+%{_iconsdir}/hicolor/32x32/apps/org.rncbc.padthv1.png
+%{_iconsdir}/hicolor/32x32/mimetypes/org.rncbc.padthv1.application-x-padthv1-preset.png
+%{_iconsdir}/hicolor/scalable/apps/org.rncbc.padthv1.svg
+%{_iconsdir}/hicolor/scalable/mimetypes/org.rncbc.padthv1.application-x-padthv1-preset.svg
+%{_datadir}/mime/packages/org.rncbc.padthv1.xml
 %{_mandir}/man1/%{name}*.1*
 %{_mandir}/fr/man1/padthv1.1.*
 
@@ -67,15 +72,14 @@ variant of additive synthesis.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
-%configure --enable-debug
+%cmake -DCONFIG_QT6=yes
 %make_build
 
 %install
-%make_install
+%make_install -C build
 
 #menu
 desktop-file-install \
@@ -83,4 +87,4 @@ desktop-file-install \
   --remove-key="Version" \
   --add-category="X-MandrivaLinux-CrossDesktop" \
   --dir %{buildroot}%{_datadir}/applications \
-%{buildroot}%{_datadir}/applications/%{name}.desktop
+%{buildroot}%{_datadir}/applications/org.rncbc.padthv1.desktop
