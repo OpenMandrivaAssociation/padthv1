@@ -14,13 +14,17 @@ BuildRequires: qmake-qt6
 BuildRequires: cmake(Qt6LinguistTools)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
+BuildRequires: cmake(Qt6Svg)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Xml)
+BuildRequires: qt6-qtbase-theme-gtk3
 BuildRequires:	pkgconfig(jack)
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(liblo)
 BuildRequires:	pkgconfig(lv2)
+BuildRequires: pkgconfig(vulkan)
+BuildRequires: pkgconfig(xkbcommon)
 
 %description
 padthv1 is an old-school polyphonic additive synthesizer with stereo fx.
