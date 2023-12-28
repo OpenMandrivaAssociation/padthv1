@@ -1,3 +1,5 @@
+%define _empty_manifest_terminate_build 0
+
 Summary:	An old-school polyphonic additive synthesizer
 Name:		padthv1
 Version:	0.9.33
