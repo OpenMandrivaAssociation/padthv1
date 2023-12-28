@@ -38,16 +38,15 @@ Features:
     URI: http://padthv1.sourceforge.net/lv2
 
 %files
-%doc AUTHORS ChangeLog README TODO
-%license COPYING
+%doc ChangeLog README
 %{_bindir}/%{name}_jack
 %{_datadir}/applications/org.rncbc.padthv1.desktop
-%{_datadir}/metainfo/org.rncbc.padthv1.appdata.xml
-%{_iconsdir}/hicolor/32x32/apps/%{name}.png
-%{_iconsdir}/hicolor/32x32/mimetypes/application-x-%{name}-*.png
-%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
-%{_iconsdir}/hicolor/scalable/mimetypes/application-x-%{name}-*.svg
-%{_datadir}/mime/packages/%{name}.xml
+#{_datadir}/metainfo/org.rncbc.padthv1.appdata.xml
+#{_iconsdir}/hicolor/32x32/apps/%{name}.png
+#{_iconsdir}/hicolor/32x32/mimetypes/application-x-%{name}-*.png
+#{_iconsdir}/hicolor/scalable/apps/%{name}.svg
+#{_iconsdir}/hicolor/scalable/mimetypes/application-x-%{name}-*.svg
+#{_datadir}/mime/packages/%{name}.xml
 %{_mandir}/man1/%{name}*.1*
 %{_mandir}/fr/man1/padthv1.1.*
 
