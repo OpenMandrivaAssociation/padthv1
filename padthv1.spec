@@ -1,26 +1,26 @@
 Summary:	An old-school polyphonic additive synthesizer
 Name:		padthv1
-Version:	0.9.23
+Version:	0.9.33
 Release:	1
 License:	GPLv2+
 Group:		Sound/Midi
 URL:		https://padthv1.sourceforge.io
 Source0:	http://sourceforge.net/projects/padthv1/files/padthv1/%{version}/%{name}-%{version}.tar.gz
+
+BuildRequires: cmake
 BuildRequires:	desktop-file-utils
-BuildRequires:	qt5-qttools
-BuildRequires: qt5-qtchooser
-BuildRequires:	qt5-linguist
-BuildRequires:	qt5-linguist-tools
-BuildRequires: qmake5
-BuildRequires:	pkgconfig(Qt5Core)
-BuildRequires:	pkgconfig(Qt5Gui)
-BuildRequires:	pkgconfig(Qt5Widgets)
-BuildRequires:	pkgconfig(Qt5Xml)
-BuildRequires:	pkgconfig(jack)
-BuildRequires:	pkgconfig(alsa)
-BuildRequires:	pkgconfig(fftw3)
-BuildRequires:	pkgconfig(liblo)
-BuildRequires:	pkgconfig(lv2)
+BuildRequires: cmake(Qt6)
+BuildRequires: qmake-qt6
+BuildRequires: cmake(Qt6LinguistTools)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Gui)
+BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	cmake(Qt6Xml)
+BuildRequires:	cmake(jack)
+BuildRequires:	cmake(alsa)
+BuildRequires:	cmake(fftw3)
+BuildRequires:	cmake(liblo)
+BuildRequires:	cmake(lv2)
 
 %description
 padthv1 is an old-school polyphonic additive synthesizer with stereo fx.
@@ -67,15 +67,14 @@ variant of additive synthesis.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
-%configure --enable-debug
+%cmake -DCONFIG_QT6=yes \
 %make_build
 
 %install
-%make_install
+%make_install -C build
 
 #menu
 desktop-file-install \
