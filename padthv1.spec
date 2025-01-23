@@ -44,6 +44,7 @@ Features:
 %{_bindir}/%{name}_jack
 %{_datadir}/applications/org.rncbc.padthv1.desktop
 %{_datadir}/metainfo/org.rncbc.padthv1.metainfo.xml
+%{_datadir}/padthv1/palette/
 %{_iconsdir}/hicolor/32x32/apps/org.rncbc.padthv1.png
 %{_iconsdir}/hicolor/32x32/mimetypes/org.rncbc.padthv1.application-x-padthv1-preset.png
 %{_iconsdir}/hicolor/scalable/apps/org.rncbc.padthv1.svg
