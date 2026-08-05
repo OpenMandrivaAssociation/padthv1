@@ -8,6 +8,7 @@ License:	GPLv2+
 Group:	Sound/Midi
 Url:		https://padthv1.sourceforge.io
 Source0:	http://sourceforge.net/projects/padthv1/files/padthv1/%{version}/%{name}-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	cmake >= 3.15
 BuildRequires:	desktop-file-utils
 BuildRequires:	git
@@ -22,11 +23,11 @@ BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Xml)
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(fftw3)
-BuildRequires: pkgconfig(jack)
+BuildRequires:	pkgconfig(jack)
 BuildRequires:	pkgconfig(liblo)
 BuildRequires:	pkgconfig(lv2)
-BuildRequires: pkgconfig(vulkan)
-BuildRequires: pkgconfig(xkbcommon)
+BuildRequires:	pkgconfig(vulkan)
+BuildRequires:	pkgconfig(xkbcommon)
 
 %description
 This is an old-school polyphonic additive synthesizer with stereo fx. It is
